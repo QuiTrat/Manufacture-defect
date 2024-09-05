@@ -404,7 +404,55 @@ plt.tight_layout()
 
 ![image](https://github.com/user-attachments/assets/00307952-5fc3-4346-accf-f84111a9da9e)
 
-### **6. Calculate Correlation**
+
+###**Relation between defect_type, defect_location, severity level and inspection method**
+
+
+[In]
+```
+categ_cols = ['defect_type', 'defect_location', 'severity', 'inspection_method']
+
+categ_cols_copy = categ_cols.copy()
+
+for col1 in categ_cols:
+    for col2 in categ_cols_copy:
+        if col1 != col2:
+            tbl = pd.crosstab(df_defect[col2], df_defect[col1])
+            plt.figure(figsize=(10,6))
+            plt.title(f'{col1} & {col2}')
+            sns.heatmap(tbl, annot=True, cmap='coolwarm', fmt='d')
+            plt.show()
+    categ_cols_copy.remove(col1)
+```
+[Out]
+
+![image](https://github.com/user-attachments/assets/ddee92aa-b6ba-4418-a1db-908a3941b08c)
+
+
+![image](https://github.com/user-attachments/assets/9da4619c-7637-4316-bbf2-71c0a88c48a9)
+
+![image](https://github.com/user-attachments/assets/c2fc1943-b9f6-4a57-b46f-6eab9ac1611b)
+
+
+**Key areas**:
+
+- Sructure defects on surface of products is highest and
+
+- Minor structure defects are frequently detected
+
+- Most of structure defects are detected through Visual inspection and Manual testing
+
+- Functional defects are highly detected by Manual testing and visual inspection
+
+- Minor defects are highest defects, especially detected in surface of products while Critical defects is mostly occurred in surface and internal of products.
+
+- Defects on surface of products are highly detected by manual testing
+
+- Manual testing is detected most of defects, the next is visual inspecion
+
+
+
+## **6. Calculate Correlation**
 
 Create dataframe to calculate repair cost group by category defect_type, defect_location, severity level by inspection methods.
 
@@ -479,11 +527,7 @@ Cosmetic-Internal-Minor under Automated Testing shows a lower cost (2715.66).
 
 Functional-Internal-Moderate under Automated Testing is relatively low (2768.20).
 
-**Inspection Method Trends:**
 
-Manual Testing generally shows higher costs across various defect types compared to Automated Testing and Visual Inspection.
-
-Automated Testing tends to have lower costs, indicating it might be more cost-effective for certain defect types.
 
 **Calculate and interpret correlations between variables in the dataset**
 
@@ -559,53 +603,7 @@ plt.show()
 
 ![image](https://github.com/user-attachments/assets/8729d920-783a-4348-82c2-1266c611c8b7)
 
-**Key Correlations:**
+**Correlation between varialbes are very weak, the model can not apply for this dataset
 
-**Defect Types and Inspection Methods:**
-
-***Cosmetic Defects:***
-
-Manual Testing: Shows a moderate positive correlation, indicating that manual testing is somewhat effective in identifying cosmetic defects.
-
-Visual Inspection: Also shows a moderate positive correlation, suggesting that visual inspection is useful for detecting cosmetic issues.
-
-***Functional Defects:***
-
-Automated Testing: Displays a strong negative correlation, indicating that automated testing is highly effective in identifying functional defects.
-
-Manual Testing: Shows a weak correlation, suggesting that manual testing is less effective for functional defects.
-
-***Structural Defects:***
-
-Automated Testing: Shows a strong positive correlation, indicating that automated testing is effective in identifying structural defects.
-
-Visual Inspection: Displays a moderate positive correlation, suggesting that visual inspection is also useful for detecting structural issues.
-
-**Defect Locations:**
-
-***Internal Defects:***
-
-Automated Testing: Shows a strong positive correlation, indicating that automated testing is effective in identifying internal defects.
-
-Manual Testing: Displays a weak correlation, suggesting that manual testing is less effective for internal defects.
-
-***Surface Defects:***
-
-Visual Inspection: Shows a strong positive correlation, indicating that visual inspection is highly effective in identifying surface defects.
-
-Automated Testing: Displays a moderate positive correlation, suggesting that automated testing is also useful for detecting surface issues.
-
-**Severity Levels:**
-
-***Critical Defects:***
-
-Automated Testing: Shows a strong positive correlation, indicating that automated testing is crucial for identifying critical defects.
-
-Manual Testing: Displays a weak correlation, suggesting that manual testing is less effective for critical defects.
-
-***Minor Defects:***
-
-Visual Inspection: Shows a moderate positive correlation, indicating that visual inspection is useful for identifying minor defects.
-
-Automated Testing: Displays a weak correlation, suggesting that automated testing is less effective for minor defects.
+# **Conclusion**
 
