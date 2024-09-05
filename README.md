@@ -607,3 +607,19 @@ plt.show()
 
 # **Conclusion**
 
+About the defects:
+
+- Structural defects are the most frequent and tend to increase in frequency, while others are decreasing;
+- Defects of critical severity are trending upwards, the rest are trending downwards;
+- The surface is the place with the most frequent occurrence of defects, especially structural defects;
+- Defects of minor severity are the most frequent.
+  
+I think we need to draw a the production process and apply quality control processes to find out the root cause of the structure defects in the surface of the products.
+
+The analysis show that the investigation should be started to find what has been causing the increase and decrease in the number of defects in Products focusing on:
+
+(1) defects of critical severity,
+
+(2) defects of the rural type that are in an upward trend, before the other aspects also increase the frequency of defects, and
+
+(3) defects on the surface of the products.	
