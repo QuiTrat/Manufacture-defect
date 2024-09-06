@@ -438,9 +438,9 @@ for col1 in categ_cols:
 
 - Sructure defects on surface of products is highest and
 
-- Minor structure defects are frequently detected
+- Minor structural defects are frequently detected
 
-- Most of structure defects are detected through Visual inspection and Manual testing
+- Most of structural defects are detected through Visual inspection and Manual testing
 
 - Functional defects are highly detected by Manual testing and visual inspection
 
@@ -448,7 +448,7 @@ for col1 in categ_cols:
 
 - Defects on surface of products are highly detected by manual testing
 
-- Manual testing is detected most of defects, the next is visual inspecion
+- Manual testing is detected most of defects, the next is visual inspection
 
 
 
